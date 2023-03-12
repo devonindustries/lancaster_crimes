@@ -37,7 +37,7 @@ def floatToYear(float):
 # DATA
 # --------
 
-data = pd.read_csv('../Data/LancasterCrimesClean.csv')
+data = pd.read_csv('Data/LancasterCrimesClean.csv')
 
 lsoa_households = 650
 lsoa_population = 1500
@@ -123,7 +123,7 @@ def GenerateLSOAMap(data):
     ], axis=1)
 
     lsoa_results = lsoa_results.reset_index()
-    lsoa_results.columns = ['LSOA', 'Crimes', '', 'Longitude', 'Latitude']
+    lsoa_results.columns = ['LSOA', 'Crimes', 'Longitude', 'Latitude']
 
     # Perform some further feature engineering
     lsoa_results['Crimes Per Household'] = lsoa_results['Crimes'] / lsoa_households
